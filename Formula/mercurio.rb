@@ -1,19 +1,19 @@
 class Mercurio < Formula
   desc "Apprise-compatible Rust library, CLI and HTTP server to send notifications to 150+ services via a single URL."
   homepage "https://alphajack.github.io/mercurio"
-  version "0.2.4"
+  version "0.2.5"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.4/mercurio-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "17b5febc9d6a8c7370265e622b332146a7e4330ee7d59aaf47efacab34443339"
+    url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.5/mercurio-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "8cc218e0803454b3ffde4d9f18faabaa85ca7a4c44e8ffda214bd6dadba9a8cd"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.4/mercurio-cli-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "b6972fa86526de1886bc98bf91ec5266fee3698376be5a003f401e152689509b"
+      url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.5/mercurio-cli-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "623ee88a563f36badaaa2d17f985522322a748f1c8c0f9263a67c90c2f3710f4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.4/mercurio-cli-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "e3fd15c17d3868201e8dc95d5f782f5f1d9e0773fb15f94bb002a601da9f9c4a"
+      url "https://github.com/AlphaJack/mercurio/releases/download/v0.2.5/mercurio-cli-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "f8a514f40862bf9220f260bb3c58cfb566457485bc788deb15542f0f9ce6ad53"
     end
   end
   license "Apache-2.0"
