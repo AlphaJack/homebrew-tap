@@ -1,43 +1,33 @@
 class Rusticlone < Formula
   desc "Scheduled 3-2-1-1-0 backups for computers and servers built on rustic profiles, with UI and notifications"
   homepage "https://github.com/AlphaJack/rusticlone"
-  version "2.0.1"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.1/rusticlone-aarch64-apple-darwin.tar.gz"
-      sha256 "b248e64977c68b54fb74758d14dba48293a60705f56f189de851da6e9e442e9b"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.1/rusticlone-x86_64-apple-darwin.tar.gz"
-      sha256 "a2e171b80364a127a3d050c1937bbd86c8be4b34270aba226baa3c800315989e"
-    end
+  version "2.0.2"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-aarch64-apple-darwin.tar.gz"
+    sha256 "9f1cd33f0e9f024351647f63e838c8adcae7d66db77eb5f65b88bf2fd20cde27"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.1/rusticlone-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "9e6d90e5c2da653e2fa90826e082a18a822ce418af80fa84cb81b4671fa346f3"
+      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "def6414c5118d2651cba217f706341871ad4665f935d81fe7c7cca43d74ebb9e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.1/rusticlone-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "4cb90ab8fe724594140500c5b3841d9051915767ae1d722c0b69ffdba7fd18f9"
+      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "35d14d2033dd3acc52fe306655c205f0a2ca37306ee4596fa00df9f582110577"
     end
   end
   license "AGPL-3.0-or-later"
   depends_on "rustic"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":                   {},
-    "aarch64-unknown-linux-gnu":              {},
-    "aarch64-unknown-linux-musl-dynamic":     {},
-    "aarch64-unknown-linux-musl-static":      {},
-    "armv7-unknown-linux-gnueabihf":          {},
-    "armv7-unknown-linux-musl-dynamiceabihf": {},
-    "armv7-unknown-linux-musl-staticeabihf":  {},
-    "x86_64-apple-darwin":                    {},
-    "x86_64-pc-windows-gnu":                  {},
-    "x86_64-unknown-linux-gnu":               {},
-    "x86_64-unknown-linux-musl-dynamic":      {},
-    "x86_64-unknown-linux-musl-static":       {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
@@ -57,9 +47,6 @@ class Rusticlone < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
-      bin.install "rusticlone"
-    end
-    if OS.mac? && Hardware::CPU.intel?
       bin.install "rusticlone"
     end
     if OS.linux? && Hardware::CPU.arm?
