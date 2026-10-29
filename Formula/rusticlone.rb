@@ -1,19 +1,19 @@
 class Rusticlone < Formula
   desc "Scheduled 3-2-1-1-0 backups for computers and servers built on rustic profiles, with UI and notifications"
   homepage "https://github.com/AlphaJack/rusticlone"
-  version "2.0.2"
+  version "2.0.3"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-aarch64-apple-darwin.tar.gz"
-    sha256 "9f1cd33f0e9f024351647f63e838c8adcae7d66db77eb5f65b88bf2fd20cde27"
+    url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.3/rusticlone-aarch64-apple-darwin.tar.gz"
+    sha256 "3c509dfa8820ecbb53ee7bdeaa7e2b6fa9fe15ba51a07b56ba6df60663dc82d9"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "def6414c5118d2651cba217f706341871ad4665f935d81fe7c7cca43d74ebb9e"
+      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.3/rusticlone-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "2b8ecffcc97651c955dfe5f8abd663f04c26487750bc4311f4a6b4972fe69d91"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.2/rusticlone-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "35d14d2033dd3acc52fe306655c205f0a2ca37306ee4596fa00df9f582110577"
+      url "https://github.com/AlphaJack/rusticlone/releases/download/v2.0.3/rusticlone-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "b2f776d75bbbbc082f0614c590a761fa1f15f453c99c9f70eb743e33b42bb2a7"
     end
   end
   license "AGPL-3.0-or-later"
